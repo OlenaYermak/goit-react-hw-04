@@ -22,11 +22,14 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
-// const [showBtn, setShowBtn] = useState(false);
+//   const [showBtn, setShowBtn] = useState(false);
+//   const [totalPages, setTotalPages] = useState(0);
 
-// setShowBtn(total_pages && total_pages !== page)
+// useEffect(() => {
+//   setShowBtn(totalPages && totalPages !== page);
+// }, [totalPages, page]);
 
-// {showBtn && <button> Load more ... </button >}
+
 
   const handleSearch = async (query) => {
   setQuery(query);
@@ -51,7 +54,8 @@ export default function App() {
       const data = await fetchImages(query, page);
       setImages(prevImages => {
         return [...prevImages, ...data]
-      });
+        } 
+      );
       
     } catch (error) {
       setError(true);
@@ -97,7 +101,9 @@ export default function App() {
         />
       )}
 
-
+{/* {showBtn && images.length > 0 && !isLoading && (
+  <LoadMoreBtn onLoadMore={handleLoadMore} />
+)} */}
       
       {images.length > 0 &&  !isLoading && <LoadMoreBtn onLoadMore={handleLoadMore} />}
  
