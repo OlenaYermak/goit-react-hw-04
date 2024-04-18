@@ -17,7 +17,7 @@ export default function ImageCard({ setSelectedImage, image: {
                         likes: likes,
                        author: name,
                        portfolio: portfolio_url,
-                   instagram:instagram_username });
+                       instagram: instagram_username,
                     openModal();
             }}/>
             </div>

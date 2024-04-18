@@ -18,8 +18,8 @@ export const fetchImages = async (inputQuery, currentPage) => {
 
      });
 
-  
-    return response.data.results; 
+    
+    return response.data; 
     
 }
 
