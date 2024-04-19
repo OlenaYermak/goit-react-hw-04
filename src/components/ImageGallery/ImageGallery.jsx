@@ -8,9 +8,9 @@ export default function ImageGallery({ images, isOpen, openModal, closeModal, se
             {images.map((image) => (
             <li className={style.imgListItem} key={image.id}>
                     <ImageCard image={image}
-                        isOpen={isOpen}
+                        
           openModal={openModal}
-          closeModal={closeModal}
+
           setSelectedImage={setSelectedImage} /></li>))}
 
         </ul>

@@ -31,8 +31,7 @@ export default function App() {
   setQuery(query);
     setPage(1);
     setImages([]);
-    setTotalPages;
-  
+    setError(false);
   };
 
   const handleLoadMore = () => {
@@ -42,9 +41,8 @@ export default function App() {
 
 
   useEffect(() => { 
-    if (query === "") {
-      return;
-    }
+    if (query === "") return;
+    
   async function getImages() {
     try {
       setIsLoading(true);
@@ -80,9 +78,8 @@ export default function App() {
     <>
       <SearchBar onSearch={handleSearch} />
       {error && <ErrorMessage />}
-      {images.length > 0 && <ImageGallery images={images} isOpen={isModalOpen}
+      {images.length > 0 && <ImageGallery images={images}
           openModal={openModal}
-          closeModal={closeModal}
           setSelectedImage={setSelectedImage} />}
      
      
